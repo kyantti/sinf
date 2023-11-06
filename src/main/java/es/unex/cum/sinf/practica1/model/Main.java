@@ -1,4 +1,4 @@
-package es.unex.cum.sinf.practica1;
+package es.unex.cum.sinf.practica1.model;
 
 import java.util.UUID;
 
