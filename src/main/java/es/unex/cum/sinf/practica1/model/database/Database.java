@@ -10,6 +10,14 @@ public class Database {
     private Cluster cluster;
 	private Session session;
 	private Logger logger = Logger.getLogger(getClass().getName());
+
+	public Cluster getCluster() {
+		return cluster;
+	}
+
+	public Session getSession() {
+		return session;
+	}
 	
     public void connect(String node) {
 		cluster = Cluster.builder().addContactPoint(node).build();
@@ -27,18 +35,5 @@ public class Database {
 		logger.info("Connection closed");
 	}
 
-	public Cluster getCluster() {
-		return cluster;
-	}
-
-	public Session getSession() {
-		return session;
-	}
-
-	public Logger getLogger() {
-		return logger;
-	}
-
-	
 
 }

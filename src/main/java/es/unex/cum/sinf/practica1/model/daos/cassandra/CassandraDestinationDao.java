@@ -59,21 +59,46 @@ public class CassandraDestinationDao implements DestinationDao {
 
     @Override
     public void insert(Destination t) {
-        String query = "INSERT INTO pablo_setrakian_bearzotti.destinations (destination_id, country, description, name, weather) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO pablo_setrakian_bearzotti.destinations (destination_id, country, description, name, weather)" +
+                       "VALUES (?, ?, ?, ?, ?)";
         session.execute(query, t.getDestinationId(), t.getCountry(), t.getDescription(), t.getName(), t.getWeather());
     }
 
     @Override
     public void update(Destination t) {
-        String query = "UPDATE pablo_setrakian_bearzotti.destinations SET country = ?, description = ?, name = ?, weather = ? WHERE destination_id = ?";
+        String query = "UPDATE pablo_setrakian_bearzotti.destinations " +
+                       "SET country = ?, description = ?, name = ?, weather = ?" +
+                       "WHERE destination_id = ?";
         session.execute(query, t.getCountry(), t.getDescription(), t.getName(), t.getWeather(), t.getDestinationId());
     }
 
     @Override
     public void delete(UUID k) {
-        String query = "DELETE FROM pablo_setrakian_bearzotti.destinations WHERE destination_id = ?";
+        String query = "DELETE FROM pablo_setrakian_bearzotti.destinations" +
+                       "WHERE destination_id = ?";
         session.execute(query, k);
     }
 
+    @Override
+    public List<Destination> getPopularDestinations() {
+        List<Destination> popularDestinations = new ArrayList<>();
+        UUID destinationId = null;
+        Destination destination = null;
+
+        String query = "SELECT destination_id, COUNT(*) as reservation_count " +
+                       "FROM pablo_setrakian_bearzotti.reservations " +
+                       "GROUP BY destination_id " +
+                       "ORDER BY reservation_count DESC";
+
+        ResultSet resultSet = session.execute(query);
+
+        for (Row row : resultSet) {
+            destinationId = row.getUUID("destination_id");
+            destination = get(destinationId);
+            popularDestinations.add(destination);
+        }
+
+        return popularDestinations;
+    }
 
 }
