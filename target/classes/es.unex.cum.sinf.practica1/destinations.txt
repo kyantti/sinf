@@ -1,0 +1,48 @@
+Paris|France|France is known for its rich history, art, and culture. Paris, the capital, is famous for iconic landmarks like the Eiffel Tower and the Louvre Museum.
+New York City|USA|The United States is a diverse country with a rich cultural landscape. New York City is a global financial and cultural hub, home to attractions like Times Square and Central Park.
+Tokyo|Japan|Japan is known for its unique blend of tradition and modernity. Tokyo, the capital, is a bustling metropolis with a vibrant street culture and historic temples.
+Rome|Italy|Italy is renowned for its art, history, and cuisine. Rome is the capital and features ancient landmarks like the Colosseum and the Roman Forum.
+Sydney|Australia|Australia is known for its stunning landscapes and wildlife. Sydney is a major city with iconic sites like the Sydney Opera House and the Sydney Harbour Bridge.
+Rio de Janeiro|Brazil|Brazil is famous for its Carnival, beautiful beaches, and the Amazon rainforest. Rio de Janeiro is known for its Christ the Redeemer statue and Copacabana Beach.
+London|England|The United Kingdom is rich in history and culture. London, the capital, is home to the British Museum, Buckingham Palace, and the Tower of London.
+Bangkok|Thailand|Thailand is known for its beautiful beaches, rich cuisine, and cultural heritage. Bangkok is a vibrant city with ornate temples and a bustling street food scene.
+Cairo|Egypt|Egypt is famous for its ancient civilization and historical monuments. Cairo is home to the Pyramids of Giza and the Sphinx.
+Cape Town|South Africa|South Africa offers diverse landscapes and wildlife. Cape Town is known for Table Mountain, beaches, and the V&A Waterfront.
+Istanbul|Turkey|Turkey is a bridge between Europe and Asia. Istanbul straddles two continents and is known for its historic architecture, including the Hagia Sophia.
+Dubai|United Arab Emirates|Dubai is a modern city known for its luxury shopping, futuristic architecture, and iconic landmarks like the Burj Khalifa.
+Barcelona|Spain|Spain is famous for its lively culture, art, and cuisine. Barcelona is known for the architecture of Antoni Gaudí and the Gothic Quarter.
+Amsterdam|Netherlands|The Netherlands is known for its canals, tulip fields, and cycling culture. Amsterdam is a picturesque city with historic buildings and museums.
+Mumbai|India|India offers a rich tapestry of culture and history. Mumbai is a bustling city with Bollywood, historic sites, and street food.
+Buenos Aires|Argentina|Argentina is famous for tango music and dance. Buenos Aires is a vibrant city with European architecture and cultural attractions.
+Venice|Italy|Venice is known for its canals, historic architecture, and art. It's a unique city built on water with landmarks like St. Mark's Basilica.
+Vancouver|Canada|Canada is known for its natural beauty. Vancouver is a coastal city surrounded by mountains and offers outdoor activities.
+Marrakech|Morocco|Morocco offers a mix of culture and tradition. Marrakech is known for its historic medina and vibrant souks.
+Santorini|Greece|Greece is famous for its islands and ancient history. Santorini is known for its white-washed buildings and stunning sunsets.
+Machu Picchu|Peru|Peru is known for its Inca heritage. Machu Picchu is an ancient Inca city set in the Andes mountains.
+Petra|Jordan|Jordan is known for its historical sites. Petra is an archaeological site with stunning rock-cut architecture.
+Kyoto|Japan|Kyoto is known for its traditional Japanese culture and historic temples.
+Prague|Czech Republic|The Czech Republic is known for its historic architecture and cultural heritage. Prague is famous for its Old Town Square and Prague Castle.
+Beijing|China|China offers a rich history and modern development. Beijing is the capital and features the Forbidden City and the Great Wall.
+Maldives|The Maldives is a tropical paradise known for its overwater bungalows and coral reefs.
+Honolulu|Hawaii|USA|Hawaii is known for its stunning natural beauty, including volcanic landscapes, beaches, and hula culture.
+Reykjavik|Iceland|Iceland is famous for its otherworldly landscapes, geysers, and waterfalls. Reykjavik is the capital and a gateway to the country's natural wonders.
+Budapest|Hungary|Hungary is known for its thermal baths, historic architecture, and the Danube River that divides Budapest.
+Athens|Greece|Athens is the capital of Greece and is known for its ancient history, including the Acropolis and Parthenon.
+Dubrovnik|Croatia|Croatia offers beautiful coastal scenery. Dubrovnik is known for its well-preserved medieval walls and historic Old Town.
+Fiji|Fiji is an island nation in the South Pacific known for its beautiful beaches, clear waters, and coral reefs.
+New Orleans|USA|New Orleans is famous for its vibrant music scene, unique cuisine, and Mardi Gras celebrations.
+Nairobi|Kenya|Kenya is known for its wildlife and safaris. Nairobi is the capital and serves as a gateway to the country's national parks.
+Moscow|Russia|Russia is known for its vast landscapes and rich history. Moscow is the capital and features iconic landmarks like the Kremlin and Red Square.
+Havana|Cuba|Cuba is known for its colorful culture, classic cars, and historic architecture. Havana is the capital and a UNESCO World Heritage site.
+Zion National Park|USA|Zion National Park is located in Utah and is famous for its stunning red rock formations and canyons.
+Bora Bora|French Polynesia|Bora Bora is a picturesque island in the South Pacific known for its overwater bungalows and crystal-clear lagoons.
+Banff National Park|Canada|Banff National Park is located in the Canadian Rockies and offers breathtaking mountain landscapes and outdoor activities.
+Machu Picchu|Peru|Peru is known for its Inca heritage. Machu Picchu is an ancient Inca city set in the Andes mountains.
+Patagonia|Argentina/Chile|Patagonia is a region known for its dramatic landscapes, including glaciers, fjords, and mountains.
+Bali|Indonesia|Bali is a tropical paradise known for its beaches, temples, and lush landscapes.
+Jerusalem|Israel|Jerusalem is a historic city with religious significance for Judaism, Christianity, and Islam.
+Vienna|Austria|Vienna is known for its classical music heritage, historic architecture, and coffeehouse culture.
+Santorini|Greece|Greece is famous for its islands and ancient history. Santorini is known for its white-washed buildings and stunning sunsets.
+The Great Wall of China|China|The Great Wall is an iconic fortification in northern China, known for its historical significance and vast length.
+Galápagos Islands|Ecuador|The Galápagos Islands are renowned for their unique wildlife and role in Charles Darwin's theory of evolution.
+Serengeti National Park|Tanzania|The Serengeti is a renowned safari destination in East Africa, known for its wildlife, including the Great Migration.
