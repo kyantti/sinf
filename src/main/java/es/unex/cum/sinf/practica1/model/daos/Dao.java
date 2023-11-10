@@ -1,5 +1,6 @@
 package es.unex.cum.sinf.practica1.model.daos;
 
+
 import java.util.List;
 
 public interface Dao <T, K>{

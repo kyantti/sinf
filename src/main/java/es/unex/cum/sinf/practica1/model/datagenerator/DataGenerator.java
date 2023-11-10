@@ -5,8 +5,8 @@ package es.unex.cum.sinf.practica1.model.datagenerator;
 import com.github.javafaker.Faker;
 import es.unex.cum.sinf.practica1.model.entities.Client;
 import es.unex.cum.sinf.practica1.model.entities.Destination;
-import es.unex.cum.sinf.practica1.model.entities.Package;
 import es.unex.cum.sinf.practica1.model.entities.Reservation;
+import es.unex.cum.sinf.practica1.model.entities.TravelPackage;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -64,9 +64,9 @@ public class DataGenerator{
         return destinations;
     }
 
-    public List<Package> generatePackages(List<Destination> destinations, int desiredNumOfPackages) {
-        List <Package> packages = new ArrayList<>();
-        Package pkg = null;
+    public List<TravelPackage> generatePackages(List<Destination> destinations, int desiredNumOfPackages) {
+        List <TravelPackage> packages = new ArrayList<>();
+        TravelPackage pkg = null;
         UUID packageId = null;
         String name = null;
         UUID destinationId = null;
@@ -101,7 +101,7 @@ public class DataGenerator{
                 duration = faker.number().numberBetween(3,7);
                 price = BigDecimal.valueOf(faker.number().randomDouble(2, 100, 5000));
 
-                pkg = new Package(packageId, name, destinationId, duration, price);
+                pkg = new TravelPackage(packageId, name, destinationId, duration, price);
                 packages.add(pkg);
             }
         }
@@ -128,13 +128,13 @@ public class DataGenerator{
 
         return clients;
     }
-    public List<Reservation> generateReservations(List<Client> clients, List<Package> packages, int desiredNumOfReservations) {
+    public List<Reservation> generateReservations(List<Client> clients, List<TravelPackage> packages, int desiredNumOfReservations) {
         List<Reservation> reservations = new ArrayList<>();
         Reservation reservation = null;
         int packagesSize = packages.size();
         int clientsSize = clients.size();
         Client client = null;
-        Package pkg = null;
+        TravelPackage pkg = null;
         LocalDate startDate = null;
         LocalDate endDate = null;
         boolean payed = false;
@@ -150,11 +150,63 @@ public class DataGenerator{
             endDate = startDate.plusDays(faker.number().numberBetween(3, 14)); // Set an end date (adjust as needed)
             payed = faker.random().nextBoolean(); // Generate a random payment status
 
-            reservation = new Reservation(UUID.randomUUID(), client.getClientId(), pkg.getPackageId(), startDate, endDate, payed);
+            reservation = new Reservation(UUID.randomUUID(), pkg.getPackageId(), client.getClientId(), startDate, endDate, payed);
             reservations.add(reservation);
         }
 
         return reservations;
     }
+
+    /*public static void main(String[] args) {
+
+        DataGenerator dataGenerator = new DataGenerator();
+        List<Destination> destinationList = dataGenerator.generateDestinations(10);
+        List<TravelPackage> packages = dataGenerator.generatePackages(destinationList, 2);
+        List<Client> clients = dataGenerator.generateClients(20);
+        List<Reservation> reservations = dataGenerator.generateReservations(clients, packages, 20);
+
+        for (Destination destination: destinationList) {
+            System.out.println(destination.toString());
+        }
+
+        for (TravelPackage pkg: packages) {
+            System.out.println(pkg.toString());
+        }
+
+        for (Client client: clients) {
+            System.out.println(client.toString());
+        }
+
+        for (Reservation reservation: reservations) {
+            System.out.println(reservation.toString());
+        }
+
+        Database database = new Database();
+
+        database.connect("127.0.0.1");
+
+        DestinationDao destinationDao = new CassandraDestinationDao(database.getSession());
+        for (Destination destination : destinationList) {
+            destinationDao.insert(destination);
+        }
+
+        PackageDao packageDao = new CassandraPackageDao(database.getSession());
+        for (TravelPackage pkg: packages) {
+            packageDao.insert(pkg);
+        }
+
+        ClientDao clientDao = new CassandraClientDao(database.getSession());
+        for (Client client: clients) {
+            clientDao.insert(client);
+        }
+
+        ReservationDao reservationDao = new CassandraReservationDao(database.getSession());
+        for (Reservation reservation: reservations) {
+            reservationDao.insert(reservation);
+        }
+
+        database.close();
+
+    }*/
 
 }

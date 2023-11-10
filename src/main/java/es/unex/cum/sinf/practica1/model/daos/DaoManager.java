@@ -1,5 +1,8 @@
 package es.unex.cum.sinf.practica1.model.daos;
 
-public class DaoManager {
-    
+public interface DaoManager {
+    ClientDao getClientDao();
+    DestinationDao getDestinationDao();
+    PackageDao getPackageDao();
+    ReservationDao getReservationDao();
 }

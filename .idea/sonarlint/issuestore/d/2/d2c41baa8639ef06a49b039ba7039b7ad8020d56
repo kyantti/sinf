@@ -1,0 +1,100 @@
+
+›
+java:S1192w"Define a constant instead of duplicating this literal "Formato UUID no vÃ¡lido. AsegÃºrese de ingresar un ID vÃ¡lido." 3 times.(‡íñ{8‰½ïÊ»1
+
+java:S1192""]Define a constant instead of duplicating this literal "6. Volver al menÃº principal" 3 times.(åÓª†úÿÿÿÿ8Š½ïÊ»1
+v
+java:S1192$"YDefine a constant instead of duplicating this literal "Seleccione una opciÃ³n: " 3 times.(âşŠ™8Š½ïÊ»1
+œ
+java:S1192;"Define a constant instead of duplicating this literal "OpciÃ³n no vÃ¡lida. Por favor, seleccione una opciÃ³n vÃ¡lida." 3 times.(¨ùÂ‡8Š½ïÊ»1
+u
+java:S1104"SMake scanner a static final constant or non-public and provide accessors if needed.(¾©´¬øÿÿÿÿ8Œ½ïÊ»1
+O
+java:S1444"-Make this "public static scanner" field final(¾©´¬øÿÿÿÿ8Œ½ïÊ»1
+f
+java:S2259¹"HA "NullPointerException" could be thrown; "connection" is nullable here.(ôêÂœ8ß¿ïÊ»1
+L	java:S106"+Replace this use of System.out by a logger.(…—õùÿÿÿÿ8é¿ïÊ»1
+G	java:S106"+Replace this use of System.out by a logger.(ïš×Á8é¿ïÊ»1
+F	java:S106"+Replace this use of System.out by a logger.(ÄöB8é¿ïÊ»1
+L	java:S106"+Replace this use of System.out by a logger.(¹åÑÓøÿÿÿÿ8é¿ïÊ»1
+L	java:S106 "+Replace this use of System.out by a logger.(Ò‡‰™ÿÿÿÿÿ8é¿ïÊ»1
+G	java:S106!"+Replace this use of System.out by a logger.(…ë“Ø8é¿ïÊ»1
+L	java:S106""+Replace this use of System.out by a logger.(åÓª†úÿÿÿÿ8ê¿ïÊ»1
+G	java:S106$"+Replace this use of System.out by a logger.(âşŠ™8ê¿ïÊ»1
+G	java:S106;"+Replace this use of System.out by a logger.(¨ùÂ‡8ì¿ïÊ»1
+]
+java:S1854T";Remove this useless assignment to local variable "clients".(¼¶Îòıÿÿÿÿ8í¿ïÊ»1
+G	java:S106G"+Replace this use of System.out by a logger.(õçÆÌ8î¿ïÊ»1
+L	java:S106K"+Replace this use of System.out by a logger.(«–Åùÿÿÿÿ8î¿ïÊ»1
+L	java:S106P"+Replace this use of System.out by a logger.(ğ•ÿèÿÿÿÿÿ8ï¿ïÊ»1
+N
+java:S1481T",Remove this unused "clients" local variable.(¼¶Îòıÿÿÿÿ8ğ¿ïÊ»1
+G	java:S106["+Replace this use of System.out by a logger.(ÿåÚ˜8ñ¿ïÊ»1
+G	java:S106`"+Replace this use of System.out by a logger.(ĞÅ«º8ñ¿ïÊ»1
+G	java:S106c"+Replace this use of System.out by a logger.(äìÎÆ8ñ¿ïÊ»1
+L	java:S106i"+Replace this use of System.out by a logger.(ü—ÿ¼ÿÿÿÿÿ8ò¿ïÊ»1
+T
+java:S1481p"2Remove this unused "travelPackage" local variable.(ë³îŸüÿÿÿÿ8ó¿ïÊ»1
+L	java:S106q"+Replace this use of System.out by a logger.(âİ¬Æùÿÿÿÿ8ô¿ïÊ»1
+G	java:S106t"+Replace this use of System.out by a logger.(Ô¥İ‹8ô¿ïÊ»1
+F	java:S106w"+Replace this use of System.out by a logger.(‡íñ{8ô¿ïÊ»1
+L	java:S106|"+Replace this use of System.out by a logger.(¼¸¢şÿÿÿÿ8ö¿ïÊ»1
+H	java:S106„"+Replace this use of System.out by a logger.(üÛãİ8÷¿ïÊ»1
+H	java:S106‡"+Replace this use of System.out by a logger.(Óê¾À8÷¿ïÊ»1
+G	java:S106‹"+Replace this use of System.out by a logger.(‡íñ{8÷¿ïÊ»1
+M	java:S106"+Replace this use of System.out by a logger.(Î¬ûÃùÿÿÿÿ8ø¿ïÊ»1
+M	java:S106—"+Replace this use of System.out by a logger.(¿£öÿÿÿÿÿ8ø¿ïÊ»1
+G	java:S106™"+Replace this use of System.out by a logger.(ìÂ²g8ø¿ïÊ»1
+G	java:S106œ"+Replace this use of System.out by a logger.(‡íñ{8ù¿ïÊ»1
+M	java:S106£"+Replace this use of System.out by a logger.(²½ì“üÿÿÿÿ8ù¿ïÊ»1
+H	java:S106«"+Replace this use of System.out by a logger.(Ä­œ8ú¿ïÊ»1
+H	java:S106¬"+Replace this use of System.out by a logger.(¾¸†ô8ú¿ïÊ»1
+M	java:S106­"+Replace this use of System.out by a logger.(ôºî¥üÿÿÿÿ8û¿ïÊ»1
+H	java:S106®"+Replace this use of System.out by a logger.(Åì€8û¿ïÊ»1
+H	java:S106¯"+Replace this use of System.out by a logger.(Ï¨‡ª8û¿ïÊ»1
+H	java:S106°"+Replace this use of System.out by a logger.(‘—æÜ8ü¿ïÊ»1
+M	java:S106±"+Replace this use of System.out by a logger.(åÓª†úÿÿÿÿ8ü¿ïÊ»1
+H	java:S106²"+Replace this use of System.out by a logger.(âşŠ™8ü¿ïÊ»1
+H	java:S106Ê"+Replace this use of System.out by a logger.(¨ùÂ‡8ş¿ïÊ»1
+`
+java:S1854Ò"BRemove this useless assignment to local variable "travelPackages".(ÈÚå8ÿÏ„Ë»1
+M	java:S106Ğ"+Replace this use of System.out by a logger.(¸ßô’üÿÿÿÿ8ÿ¿ïÊ»1
+Q
+java:S1481Ò"3Remove this unused "travelPackages" local variable.(ÈÚå8€Ğ„Ë»1
+T
+java:S1172Ö"1Remove this unused method parameter "daoManager".(ÀñÆîıÿÿÿÿ8€ÀïÊ»1
+H	java:S106Ú"+Replace this use of System.out by a logger.(µî°Û8€ÀïÊ»1
+M	java:S106Û"+Replace this use of System.out by a logger.(µ¸½Üøÿÿÿÿ8ÀïÊ»1
+M	java:S106Ü"+Replace this use of System.out by a logger.(²‚Î—ÿÿÿÿÿ8ÀïÊ»1
+M	java:S106İ"+Replace this use of System.out by a logger.(Î”òûıÿÿÿÿ8ÀïÊ»1
+M	java:S106Ş"+Replace this use of System.out by a logger.(”ëŞùÿÿÿÿ8ÀïÊ»1
+M	java:S106ß"+Replace this use of System.out by a logger.(ö–åÓıÿÿÿÿ8ÀïÊ»1
+M	java:S106à"+Replace this use of System.out by a logger.(åÓª†úÿÿÿÿ8ÀïÊ»1
+H	java:S106â"+Replace this use of System.out by a logger.(âşŠ™8ÀïÊ»1
+H	java:S106ç"+Replace this use of System.out by a logger.(Ğ¹­Ï8‚ÀïÊ»1
+G	java:S106ê"+Replace this use of System.out by a logger.(Ç ‚U8‚ÀïÊ»1
+M	java:S106í"+Replace this use of System.out by a logger.(“ûÈ¶ûÿÿÿÿ8‚ÀïÊ»1
+H	java:S106ğ"+Replace this use of System.out by a logger.(³İ»¥8‚ÀïÊ»1
+H	java:S106ó"+Replace this use of System.out by a logger.(”±£Ü8ƒÀïÊ»1
+H	java:S106ù"+Replace this use of System.out by a logger.(¨ùÂ‡8ƒÀïÊ»1
+S
+java:S1481ÿ"5Remove this unused "returnToMainMenu" local variable.(““Ğ8…ÀïÊ»1
+H	java:S106ƒ"+Replace this use of System.out by a logger.(£ìİ˜8…ÀïÊ»1
+M	java:S106„"+Replace this use of System.out by a logger.(ØïôÂşÿÿÿÿ8…ÀïÊ»1
+M	java:S106…"+Replace this use of System.out by a logger.(«Ì¥¬üÿÿÿÿ8…ÀïÊ»1
+M	java:S106†"+Replace this use of System.out by a logger.(Óâ•ÿÿÿÿÿ8…ÀïÊ»1
+H	java:S106—"+Replace this use of System.out by a logger.(àŸúÇ8ˆÀïÊ»1
+H	java:S106"+Replace this use of System.out by a logger.(ÙÀ8‰ÀïÊ»1
+H	java:S106"+Replace this use of System.out by a logger.(ùÈÒÏ8‰ÀïÊ»1
+H	java:S106Ÿ"+Replace this use of System.out by a logger.(µŠøÖ8‰ÀïÊ»1
+M	java:S106 "+Replace this use of System.out by a logger.(Ò±¹¨ûÿÿÿÿ8‰ÀïÊ»1
+M	java:S106¡"+Replace this use of System.out by a logger.(òÛÖ™ùÿÿÿÿ8‰ÀïÊ»1
+H	java:S106¢"+Replace this use of System.out by a logger.(˜ÛÚ¸8‰ÀïÊ»1
+G	java:S106±"+Replace this use of System.out by a logger.(³¹8ŠÀïÊ»1
+H	java:S106µ"+Replace this use of System.out by a logger.(àŸúÇ8‹ÀïÊ»1
+i
+java:S1128"LRemove this unused import 'es.unex.cum.sinf.practica1.model.daos.ClientDao'.(¯Ñ¹ƒ8ÓâôÊ»1
+R
+java:S1128"5Remove this unused import 'java.text.ParseException'.(ñ®ï•8ÓâôÊ»1
+T
+java:S1128"7Remove this unused import 'java.text.SimpleDateFormat'.(ú¡ÙÛ8ÓâôÊ»1

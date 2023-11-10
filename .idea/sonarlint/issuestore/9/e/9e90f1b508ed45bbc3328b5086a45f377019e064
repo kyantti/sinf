@@ -1,7 +1,19 @@
 
-
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(û§¡İ8ïÒ¸×º1
-£
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(º»Ò‡ùÿÿÿÿ8ïÒ¸×º1
-£
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(—·Ïúÿÿÿÿ8ğÒ¸×º1
+h
+java:S1192!"KDefine a constant instead of duplicating this literal "package_id" 4 times.(°Ñû8ÄÓÈÇ»1
+l
+java:S1192""JDefine a constant instead of duplicating this literal "client_id" 4 times.(ˆıÃñşÿÿÿÿ8ÄÓÈÇ»1
+c
+java:S1192%"FDefine a constant instead of duplicating this literal "payed" 4 times.(Á™Ã8ÄÓÈÇ»1
+l
+java:S1192 "ODefine a constant instead of duplicating this literal "reservation_id" 4 times.(ÛÈ¼±8ÄÓÈÇ»1
+v
+java:S1192"YDefine a constant instead of duplicating this literal "WHERE reservation_id = ?" 3 times.(Ùéş8ÄÓÈÇ»1
+k
+java:S1192$"IDefine a constant instead of duplicating this literal "end_date" 4 times.(ÿ¦Ä¤ùÿÿÿÿ8ÃÓÈÇ»1
+h
+java:S1192#"KDefine a constant instead of duplicating this literal "start_date" 4 times.(ŒŠ­Š8ÄÓÈÇ»1
+i
+java:S1128"LRemove this unused import 'es.unex.cum.sinf.practica1.model.daos.ClientDao'.(¯Ñ¹ƒ8‡áĞÈ»1
+j
+java:S1128"MRemove this unused import 'es.unex.cum.sinf.practica1.model.entities.Client'.(ƒã·8‰áĞÈ»1
