@@ -1,0 +1,12 @@
+
+J
+java:S14816".Remove this unused "summaries" local variable.(‚íï8„‹õ»1
+\
+java:S1854`"?Remove this useless assignment to local variable "mongoClient".(Š‰¢é8æôãü»1
+G	java:S106N"+Replace this use of System.out by a logger.(­çÅÿ8œ„‹õ»1
+L	java:S106O"+Replace this use of System.out by a logger.(ØïôÂşÿÿÿÿ8„‹õ»1
+L	java:S106P"+Replace this use of System.out by a logger.(«Ì¥¬üÿÿÿÿ8„‹õ»1
+L	java:S106Q"+Replace this use of System.out by a logger.(Óâ•ÿÿÿÿÿ8„‹õ»1
+M
+java:S1481`"0Remove this unused "mongoClient" local variable.(Š‰¢é8ñôãü»1
+G	java:S106h"+Replace this use of System.out by a logger.(àŸúÇ8£„‹õ»1

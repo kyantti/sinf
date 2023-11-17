@@ -54,6 +54,27 @@ public class Client {
     public String toString() {
         return "Client [clientId=" + clientId + ", name=" + name + ", email=" + email + ", telephone=" + telephone
                 + "]";
-    }    
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Client client = (Client) o;
+
+        if (!clientId.equals(client.clientId)) return false;
+        if (!name.equals(client.name)) return false;
+        if (!email.equals(client.email)) return false;
+        return telephone.equals(client.telephone);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = clientId.hashCode();
+        result = 31 * result + name.hashCode();
+        result = 31 * result + email.hashCode();
+        result = 31 * result + telephone.hashCode();
+        return result;
+    }
 }

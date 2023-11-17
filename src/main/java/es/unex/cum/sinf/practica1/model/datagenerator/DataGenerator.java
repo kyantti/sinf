@@ -10,16 +10,13 @@ import es.unex.cum.sinf.practica1.model.entities.TravelPackage;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 public class DataGenerator{
     private Faker faker;
     public DataGenerator() {
         faker = new Faker();
     }
-
     public List<Destination> generateDestinations(int desiredNumOfDestinations) {
         List<Destination> destinations = new ArrayList<>();
         Destination destination = null;
@@ -64,7 +61,7 @@ public class DataGenerator{
         return destinations;
     }
 
-    public List<TravelPackage> generatePackages(List<Destination> destinations, int desiredNumOfPackages) {
+    public List<TravelPackage> generatePackagesPerDestination(List<Destination> destinations, int desiredNumOfPackages) {
         List <TravelPackage> packages = new ArrayList<>();
         TravelPackage pkg = null;
         UUID packageId = null;
@@ -110,7 +107,8 @@ public class DataGenerator{
     }
 
     public List<Client> generateClients(int desiredNumOfClients) {
-        List <Client> clients = new ArrayList<>();
+        List<Client> clients = new ArrayList<>();
+        Set<String> generatedEmails = new HashSet<>();
         Client client = null;
         UUID clientId = null;
         String name = null;
@@ -120,7 +118,7 @@ public class DataGenerator{
         for (int i = 0; i < desiredNumOfClients; i++) {
             clientId = UUID.randomUUID();
             name = faker.name().fullName();
-            email = faker.internet().emailAddress();
+            email = generateUniqueEmail(generatedEmails);
             telephone = faker.phoneNumber().cellPhone();
             client = new Client(clientId, name, email, telephone);
             clients.add(client);
@@ -128,6 +126,16 @@ public class DataGenerator{
 
         return clients;
     }
+
+    private String generateUniqueEmail(Set<String> generatedEmails) {
+        String email = faker.internet().emailAddress();
+        while (generatedEmails.contains(email)) {
+            email = faker.internet().emailAddress();
+        }
+        generatedEmails.add(email);
+        return email;
+    }
+
     public List<Reservation> generateReservations(List<Client> clients, List<TravelPackage> packages, int desiredNumOfReservations) {
         List<Reservation> reservations = new ArrayList<>();
         Reservation reservation = null;
@@ -145,7 +153,7 @@ public class DataGenerator{
 
         for (int i = 0; i < desiredNumOfReservations; i++) {
             client = clients.get(i % clientsSize); // Select a client in a cyclical manner
-            pkg = packages.get(i % packagesSize); // Select a package in a cyclical manner
+            pkg = packages.get(faker.random().nextInt(packagesSize));
             startDate = LocalDate.now(); // Set a start date (you can customize this as needed)
             endDate = startDate.plusDays(faker.number().numberBetween(3, 14)); // Set an end date (adjust as needed)
             payed = faker.random().nextBoolean(); // Generate a random payment status
@@ -157,56 +165,30 @@ public class DataGenerator{
         return reservations;
     }
 
-    /*public static void main(String[] args) {
+    public List<Reservation> generateReservationsPerPackage(List<Client> clients, TravelPackage travelPackage, int desiredNumOfReservations){
+        List<Reservation> reservations = new ArrayList<>();
+        Reservation reservation = null;
+        int clientsSize = clients.size();
+        Client client = null;
+        LocalDate startDate = null;
+        LocalDate endDate = null;
+        boolean payed = false;
 
-        DataGenerator dataGenerator = new DataGenerator();
-        List<Destination> destinationList = dataGenerator.generateDestinations(10);
-        List<TravelPackage> packages = dataGenerator.generatePackages(destinationList, 2);
-        List<Client> clients = dataGenerator.generateClients(20);
-        List<Reservation> reservations = dataGenerator.generateReservations(clients, packages, 20);
-
-        for (Destination destination: destinationList) {
-            System.out.println(destination.toString());
+        if (clientsSize == 0) {
+            return reservations;
         }
 
-        for (TravelPackage pkg: packages) {
-            System.out.println(pkg.toString());
+        for (int i = 0; i < desiredNumOfReservations; i++) {
+            client = clients.get(i % clientsSize); // Select a client in a cyclical manner
+            startDate = LocalDate.now(); // Set a start date (you can customize this as needed)
+            endDate = startDate.plusDays(faker.number().numberBetween(3, 14)); // Set an end date (adjust as needed)
+            payed = faker.random().nextBoolean(); // Generate a random payment status
+
+            reservation = new Reservation(UUID.randomUUID(), travelPackage.getPackageId(), client.getClientId(), startDate, endDate, payed);
+            reservations.add(reservation);
         }
 
-        for (Client client: clients) {
-            System.out.println(client.toString());
-        }
-
-        for (Reservation reservation: reservations) {
-            System.out.println(reservation.toString());
-        }
-
-        Database database = new Database();
-
-        database.connect("127.0.0.1");
-
-        DestinationDao destinationDao = new CassandraDestinationDao(database.getSession());
-        for (Destination destination : destinationList) {
-            destinationDao.insert(destination);
-        }
-
-        PackageDao packageDao = new CassandraPackageDao(database.getSession());
-        for (TravelPackage pkg: packages) {
-            packageDao.insert(pkg);
-        }
-
-        ClientDao clientDao = new CassandraClientDao(database.getSession());
-        for (Client client: clients) {
-            clientDao.insert(client);
-        }
-
-        ReservationDao reservationDao = new CassandraReservationDao(database.getSession());
-        for (Reservation reservation: reservations) {
-            reservationDao.insert(reservation);
-        }
-
-        database.close();
-
-    }*/
+        return reservations;
+    }
 
 }

@@ -1,34 +1,85 @@
 package es.unex.cum.sinf.practica1.model.daos.mongoDb;
 
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
 import es.unex.cum.sinf.practica1.model.daos.ClientDao;
 import es.unex.cum.sinf.practica1.model.entities.Client;
 
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 public class MongoDbClientDao implements ClientDao {
-    @Override
-    public Client get(UUID uuid) {
-        return null;
+    private MongoCollection<Document> clientsCollection;
+
+    public MongoDbClientDao(MongoDatabase database) {
+        this.clientsCollection = database.getCollection("clients");
     }
 
     @Override
-    public List<Client> getAll() {
-        return null;
+    public Client get(UUID clientId) {
+        Document query = new Document("_id", clientId.toString());
+        Document result = clientsCollection.find(query).first();
+
+        return mapDocumentToClient(result);
+
+    }
+
+    @Override
+    public Set<Client> getAll() {
+        Set<Client> clients = new HashSet<>();
+        try (MongoCursor<Document> cursor = clientsCollection.find().iterator()) {
+            while (cursor.hasNext()) {
+                Document document = cursor.next();
+                clients.add(mapDocumentToClient(document));
+            }
+        }
+        return clients;
     }
 
     @Override
     public void insert(Client client) {
+        Document document = new Document()
+                .append("_id", client.getClientId().toString())
+                .append("name", client.getName())
+                .append("email", client.getEmail())
+                .append("phone", client.getTelephone());
 
+        clientsCollection.insertOne(document);
     }
 
     @Override
     public void update(Client client) {
+        Document filter = new Document("_id", client.getClientId().toString());
+        Document update = new Document("$set", new Document()
+                .append("name", client.getName())
+                .append("email", client.getEmail())
+                .append("phone", client.getTelephone()));
 
+        clientsCollection.updateOne(filter, update);
     }
 
     @Override
-    public void delete(UUID uuid) {
+    public void delete(UUID clientId) {
+        Document query = new Document("_id", clientId.toString());
+        clientsCollection.deleteOne(query);
+    }
 
+    @Override
+    public Client getClientByEmail(String email) {
+        Document query = new Document("email", email);
+        Document result = clientsCollection.find(query).first();
+
+        return mapDocumentToClient(result);
+
+    }
+
+    private Client mapDocumentToClient(Document document) {
+        UUID clientId = UUID.fromString(document.getString("_id"));
+        String name = document.getString("name");
+        String email = document.getString("email");
+        String phone = document.getString("phone");
+
+        return new Client(clientId, name, email, phone);
     }
 }

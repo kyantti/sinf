@@ -1,13 +1,12 @@
 package es.unex.cum.sinf.practica1.model.daos;
 
-
-import java.util.List;
+import java.util.Set;
 
 public interface Dao <T, K>{
 
     T get(K k);
     
-    List<T> getAll();
+    Set<T> getAll();
     
     void insert(T t);
     

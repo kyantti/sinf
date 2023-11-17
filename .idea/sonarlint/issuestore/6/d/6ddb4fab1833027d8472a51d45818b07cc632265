@@ -1,10 +1,6 @@
 
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ºÔÌûÿÿÿÿ
-£
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(õæ…êşÿÿÿÿ8¦¸•‚»1
-£
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(õŒ’»şÿÿÿÿ8¦¸•‚»1
-£
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(—·Ïúÿÿÿÿ8¦¸•‚»1
-H
-java:S1168"+Return an empty collection instead of null.(¥¹ï8©¸•‚»1
+h
+java:S11920"FDefine a constant instead of duplicating this literal "phone" 3 times.(½º‹¯şÿÿÿÿ8µÎ¯ü»1
+h
+java:S1192/"FDefine a constant instead of duplicating this literal "email" 4 times.(±Á¥§úÿÿÿÿ8µÎ¯ü»1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ºÔÌûÿÿÿÿ8·Î¯ü»1

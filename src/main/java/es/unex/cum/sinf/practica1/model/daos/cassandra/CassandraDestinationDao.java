@@ -1,8 +1,6 @@
 package es.unex.cum.sinf.practica1.model.daos.cassandra;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Row;
@@ -14,43 +12,31 @@ import es.unex.cum.sinf.practica1.model.entities.Destination;
 public class CassandraDestinationDao implements DestinationDao {
 
     private Session session;
+    private String keyspace;
 
-    public CassandraDestinationDao(Session session) {
+    public CassandraDestinationDao(Session session, String keyspace) {
         this.session = session;
+        this.keyspace = keyspace;
     }
 
     @Override
-    public Destination get(UUID k) {
-        String query = "SELECT * FROM pablo_setrakian_bearzotti.destinations WHERE destination_id = ?";
-        ResultSet resultSet = session.execute(query, k);
+    public Destination get(UUID auxDestinationId) {
+        String query = "SELECT * FROM " + keyspace + ".destinations WHERE destination_id = ?";
+        ResultSet resultSet = session.execute(query, auxDestinationId);
         Row row = resultSet.one();
 
-        if (row != null) {
-            return new Destination(
-                row.getUUID("destination_id"),
-                row.getString("country"),
-                row.getString("description"),
-                row.getString("name"),
-                row.getString("weather"));
-        } else {
-            return null;
-        }
+        return mapRowToDestination(row);
     }
 
     @Override
-    public List<Destination> getAll() {
-        List<Destination> destinations = new ArrayList<>();
+    public Set<Destination> getAll() {
+        Set <Destination> destinations = new HashSet<>();
 
-        String query = "SELECT * FROM pablo_setrakian_bearzotti.destinations";
+        String query = "SELECT * FROM " + keyspace + ".destinations";
         ResultSet resultSet = session.execute(query);
 
         for (Row row : resultSet) {
-            Destination destination = new Destination(
-                    row.getUUID("destination_id"),
-                    row.getString("country"),
-                    row.getString("description"),
-                    row.getString("name"),
-                    row.getString("weather"));
+            Destination destination = mapRowToDestination(row);
             destinations.add(destination);
         }
 
@@ -58,47 +44,76 @@ public class CassandraDestinationDao implements DestinationDao {
     }
 
     @Override
-    public void insert(Destination t) {
-        String query = "INSERT INTO pablo_setrakian_bearzotti.destinations (destination_id, country, description, name, weather)" +
-                       "VALUES (?, ?, ?, ?, ?)";
-        session.execute(query, t.getDestinationId(), t.getCountry(), t.getDescription(), t.getName(), t.getWeather());
+    public void insert(Destination destination) {
+        String query = "INSERT INTO " + keyspace + ".destinations (destination_id, country, description, name, weather) VALUES (?, ?, ?, ?, ?)";
+        session.execute(query, destination.getDestinationId(), destination.getCountry(), destination.getDescription(), destination.getName(), destination.getWeather());
     }
 
     @Override
-    public void update(Destination t) {
-        String query = "UPDATE pablo_setrakian_bearzotti.destinations " +
-                       "SET country = ?, description = ?, name = ?, weather = ?" +
-                       "WHERE destination_id = ?";
-        session.execute(query, t.getCountry(), t.getDescription(), t.getName(), t.getWeather(), t.getDestinationId());
+    public void update(Destination destination) {
+        String query = "UPDATE " + keyspace + ".destinations SET country = ?, description = ?, name = ?, weather = ? WHERE destination_id = ?";
+        session.execute(query, destination.getCountry(), destination.getDescription(), destination.getName(), destination.getWeather(), destination.getDestinationId());
     }
 
     @Override
-    public void delete(UUID k) {
-        String query = "DELETE FROM pablo_setrakian_bearzotti.destinations" +
-                       "WHERE destination_id = ?";
-        session.execute(query, k);
+    public void delete(UUID destinationId) {
+        String query = "DELETE FROM " + keyspace + ".destinations WHERE destination_id = ?";
+        session.execute(query, destinationId);
     }
 
     @Override
-    public List<Destination> getPopularDestinations() {
-        List<Destination> popularDestinations = new ArrayList<>();
-        UUID destinationId = null;
-        Destination destination = null;
+    public Set<Destination> getDestinationsByWeather(String weather) {
+        Set<Destination> destinations = new HashSet<>();
 
-        String query = "SELECT destination_id, COUNT(*) as reservation_count " +
-                       "FROM pablo_setrakian_bearzotti.reservations " +
-                       "GROUP BY destination_id " +
-                       "ORDER BY reservation_count DESC";
-
-        ResultSet resultSet = session.execute(query);
+        String query = "SELECT * FROM " + keyspace + ".destinations WHERE weather = ?";
+        ResultSet resultSet = session.execute(query, weather);
 
         for (Row row : resultSet) {
-            destinationId = row.getUUID("destination_id");
-            destination = get(destinationId);
-            popularDestinations.add(destination);
+            Destination destination = mapRowToDestination(row);
+            destinations.add(destination);
         }
 
-        return popularDestinations;
+        return destinations;
+    }
+
+    @Override
+    public Set<Destination> getDestinationsByCountry(String country) {
+        Set<Destination> destinations = new HashSet<>();
+
+        String query = "SELECT * FROM " + keyspace + ".destinations WHERE country = ?";
+        ResultSet resultSet = session.execute(query, country);
+
+        for (Row row : resultSet) {
+            Destination destination = mapRowToDestination(row);
+            destinations.add(destination);
+        }
+
+        return destinations;
+    }
+
+    @Override
+    public Set<Destination> getDestinationsByName(String name) {
+        Set<Destination> destinations = new HashSet<>();
+
+        String query = "SELECT * FROM " + keyspace + ".destinations WHERE name = ?";
+        ResultSet resultSet = session.execute(query, name);
+
+        for (Row row : resultSet) {
+            Destination destination = mapRowToDestination(row);
+            destinations.add(destination);
+        }
+
+        return destinations;
+    }
+
+    private Destination mapRowToDestination(Row row) {
+        UUID destinationId = row.getUUID("destination_id");
+        String name = row.getString("name");
+        String country = row.getString("country");
+        String description = row.getString("description");
+        String weather = row.getString("weather");
+
+        return new Destination(destinationId, name, country, description, weather);
     }
 
 }

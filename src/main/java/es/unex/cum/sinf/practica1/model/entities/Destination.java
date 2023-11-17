@@ -63,5 +63,27 @@ public class Destination {
                 + ", description=" + description + ", weather=" + weather + "]";
     }
 
-    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Destination that = (Destination) o;
+
+        if (!destinationId.equals(that.destinationId)) return false;
+        if (!name.equals(that.name)) return false;
+        if (!country.equals(that.country)) return false;
+        if (!description.equals(that.description)) return false;
+        return weather.equals(that.weather);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = destinationId.hashCode();
+        result = 31 * result + name.hashCode();
+        result = 31 * result + country.hashCode();
+        result = 31 * result + description.hashCode();
+        result = 31 * result + weather.hashCode();
+        return result;
+    }
 }

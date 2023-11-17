@@ -1,14 +1,14 @@
 
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ºÔÌûÿÿÿÿ
-
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(û§¡İ8ö›‚»1
-£
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(º»Ò‡ùÿÿÿÿ8ö›‚»1
-£
-java:S1186 "€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(—·Ïúÿÿÿÿ8ö›‚»1
-H
-java:S1168"+Return an empty collection instead of null.(¥¹ï8÷›‚»1
-H
-java:S1168&"+Return an empty collection instead of null.(¥¹ï8ø›‚»1
-H
-java:S1168+"+Return an empty collection instead of null.(¥¹ï8ù›‚»1
+k
+java:S1192<"IDefine a constant instead of duplicating this literal "end_date" 4 times.(Ç—Ò¥ûÿÿÿÿ8–»Ãü»1
+q
+java:S1192"ODefine a constant instead of duplicating this literal "reservation_id" 5 times.(ğ”©€úÿÿÿÿ8—»Ãü»1
+h
+java:S1192="KDefine a constant instead of duplicating this literal "package_id" 4 times.(¶¯˜€8—»Ãü»1
+l
+java:S1192;"JDefine a constant instead of duplicating this literal "client_id" 4 times.(Ûß°Úùÿÿÿÿ8—»Ãü»1
+m
+java:S1192?"KDefine a constant instead of duplicating this literal "start_date" 4 times.(–·‚ıÿÿÿÿ8˜»Ãü»1
+h
+java:S1192>"FDefine a constant instead of duplicating this literal "payed" 3 times.(áß¬ıÿÿÿÿ8˜»Ãü»1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ºÔÌûÿÿÿÿ8ƒÄü»1

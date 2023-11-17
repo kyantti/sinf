@@ -64,5 +64,27 @@ public class TravelPackage {
                 + duration + ", price=" + price + "]";
     }
 
-    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        TravelPackage that = (TravelPackage) o;
+
+        if (duration != that.duration) return false;
+        if (!packageId.equals(that.packageId)) return false;
+        if (!name.equals(that.name)) return false;
+        if (!destinationId.equals(that.destinationId)) return false;
+        return price.equals(that.price);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = packageId.hashCode();
+        result = 31 * result + name.hashCode();
+        result = 31 * result + destinationId.hashCode();
+        result = 31 * result + duration;
+        result = 31 * result + price.hashCode();
+        return result;
+    }
 }

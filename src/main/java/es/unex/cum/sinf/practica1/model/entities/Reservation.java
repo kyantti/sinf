@@ -75,5 +75,29 @@ public class Reservation {
                 + ", startDate=" + startDate + ", endDate=" + endDate + ", payed=" + payed + "]";
     }
 
-    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Reservation that = (Reservation) o;
+
+        if (payed != that.payed) return false;
+        if (!reservationId.equals(that.reservationId)) return false;
+        if (!packageId.equals(that.packageId)) return false;
+        if (!clientId.equals(that.clientId)) return false;
+        if (!startDate.equals(that.startDate)) return false;
+        return endDate.equals(that.endDate);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = reservationId.hashCode();
+        result = 31 * result + packageId.hashCode();
+        result = 31 * result + clientId.hashCode();
+        result = 31 * result + startDate.hashCode();
+        result = 31 * result + endDate.hashCode();
+        result = 31 * result + (payed ? 1 : 0);
+        return result;
+    }
 }

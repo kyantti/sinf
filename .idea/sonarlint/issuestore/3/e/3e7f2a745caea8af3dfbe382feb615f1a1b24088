@@ -1,13 +1,9 @@
 
-l
-java:S1192"ODefine a constant instead of duplicating this literal "destination_id" 4 times.(½ÜŸÛ8«£¬»1
-h
-java:S1192"KDefine a constant instead of duplicating this literal "package_id" 4 times.(ÓÎ­Ç8«£¬»1
+f
+java:S1192"IDefine a constant instead of duplicating this literal "duration" 5 times.(“€¹Ó8«£¬»1
 c
-java:S1192!"FDefine a constant instead of duplicating this literal "price" 4 times.(ï¶Ã®8«£¬»1
-
-java:S1192"rDefine a constant instead of duplicating this literal "SELECT * FROM pablo_setrakian_bearzotti.packages " 3 times.(êçé8ü£Ê»1
-k
-java:S1192 "IDefine a constant instead of duplicating this literal "duration" 4 times.(¤ü…ãûÿÿÿÿ8«£¬»1
+java:S1192"FDefine a constant instead of duplicating this literal "price" 5 times.(“€¹Ó8«£¬»1
 l
-java:S1128"ORemove this unused import 'org.apache.cassandra.exceptions.CassandraException'.(³ò•â8èí¡Ê»1
+java:S1192"ODefine a constant instead of duplicating this literal "destination_id" 5 times.(“€¹Ó8«£¬»1
+h
+java:S1192"KDefine a constant instead of duplicating this literal "package_id" 5 times.(“€¹Ó8«£¬»1

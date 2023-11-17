@@ -5,4 +5,5 @@ public interface DaoManager {
     DestinationDao getDestinationDao();
     PackageDao getPackageDao();
     ReservationDao getReservationDao();
+    PackageSummaryDao getPackageSummaryDao();
 }

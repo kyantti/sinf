@@ -1,6 +1,7 @@
 package es.unex.cum.sinf.practica1.model.databaseConnection.mongoDb;
 
-import com.mongodb.MongoClient;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoDatabase;
 import es.unex.cum.sinf.practica1.model.databaseConnection.Connection;
 
@@ -20,13 +21,13 @@ public class MongoDbConnection implements Connection {
         return database;
     }
 
-    public void setDatabase(MongoDatabase database) {
-        this.database = database;
+    public void setDatabase(String database) {
+        this.database = client.getDatabase(database);
     }
 
     @Override
     public void open(String host) {
-        client = (new MongoClient(host, 27017));
+        client = MongoClients.create("mongodb://" + host + ":27017");
     }
     public void connectToCollection(String database) {
         this.database = client.getDatabase(database);
