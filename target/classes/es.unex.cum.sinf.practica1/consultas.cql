@@ -77,3 +77,8 @@ CREATE TABLE pablo_setrakian_bearzotti.package_summary_v2
     PRIMARY KEY (package_id, total_reservations ))
     WITH CLUSTERING ORDER BY (total_reservations DESC);
 
+
+
+
+SELECT * FROM pablo_setrakian_bearzotti.reservations
+WHERE client_id =  271bfd06-ddd4-4d83-9b8b-acb2815c76c9 AND package_id = 20b908fe-5d71-4a69-8ece-63aed8317b1a;
