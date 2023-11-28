@@ -18,6 +18,8 @@ public class MongoDbPackageDao implements PackageDao {
 
     public MongoDbPackageDao(MongoDatabase database) {
         this.collection = database.getCollection("packages");
+        collection.createIndex(new Document("name", 1));
+        collection.createIndex(new Document("destination_id", 1));
     }
 
     @Override

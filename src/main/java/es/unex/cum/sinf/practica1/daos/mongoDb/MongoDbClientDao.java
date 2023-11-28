@@ -14,6 +14,7 @@ public class MongoDbClientDao implements ClientDao {
 
     public MongoDbClientDao(MongoDatabase database) {
         this.clientsCollection = database.getCollection("clients");
+        clientsCollection.createIndex(new Document("email", 1));
     }
 
     @Override

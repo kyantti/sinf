@@ -89,6 +89,7 @@ public class DatabasePopulator {
         session.execute("TRUNCATE pablo_setrakian_bearzotti.reservations;");
         session.execute("TRUNCATE pablo_setrakian_bearzotti.package_summary;");
         session.execute("TRUNCATE pablo_setrakian_bearzotti.packages_by_destination_and_duration;");
+        session.execute("TRUNCATE pablo_setrakian_bearzotti.reservations_by_client_package_payed;");
     }
 
     public void emptyDatabase(Connection connection) {

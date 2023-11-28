@@ -17,6 +17,8 @@ public class MongoDbReservationDao implements ReservationDao {
 
     public MongoDbReservationDao(MongoDatabase database) {
         this.collection = database.getCollection("reservations");
+        collection.createIndex(new Document("client_id", 1).append("start_date", 1).append("end_date", 1));
+        collection.createIndex(new Document("client_id", 1).append("package_id", 1).append("payed", 1));
     }
 
     @Override

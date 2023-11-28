@@ -15,6 +15,7 @@ public class MongoDbDestinationDao implements DestinationDao {
 
     public MongoDbDestinationDao(MongoDatabase database) {
         this.collection = database.getCollection("destinations");
+        collection.createIndex(new Document("country", 1));
     }
 
     @Override
