@@ -91,7 +91,7 @@ Still to be documented.
 | 23 | 7065 |
 
 <aside>
-💡 We must show advertising at 7:00 p.m. to maximize the number of sales, since many people are shopping online at that time,
+💡 We must show advertising at 7:00 p.m. to maximize the number of sales of a product, since many people are shopping online at that time.
 
 </aside>
 
