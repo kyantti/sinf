@@ -39,12 +39,6 @@ Q.idea/sonarlint/securityhotspotstore/4/a/4a2e2886c9e46f04baf5d98a22b48b095f321d
 Q.idea/sonarlint/securityhotspotstore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e,9/0/909762385fc6eb20f922a91c6865741308b57f2c
 Å
 Q.idea/sonarlint/securityhotspotstore/8/6/863e0292fd7e9b3e74dafd6cc01f73ba76346482,0/c/0c4799549ebca80c86406fd218445fef27b61acc
-x
-Hsrc/main/java/es/unex/cum/sinf/practica2/IncomeByMonthAndYearMapper.java,3/c/3c6429aa2f0469699b7843017d490c617af0b937
-p
-@src/main/java/es/unex/cum/sinf/practica2/IncomeByYearMapper.java,e/9/e9686aaa65818d17dcdf9283b80a8029e2c330be
-o
-?src/main/java/es/unex/cum/sinf/practica2/SalesByCityMapper.java,1/4/140ca39b5cada3a83a4ce16857bcf811cc5d3083
 Å
 Q.idea/sonarlint/securityhotspotstore/1/4/140ca39b5cada3a83a4ce16857bcf811cc5d3083,a/4/a4a399fc46f39867b68c7e0de396f92649b6a711
 Å
@@ -63,21 +57,17 @@ w
 G.idea/sonarlint/issuestore/8/f/8f1fbd0daec750f3dccafa0f31fc2d4bd4fc1f2c,4/1/41ca66bfd6a11870d07bba824b2b9a39c7027b25
 Å
 Q.idea/sonarlint/securityhotspotstore/8/f/8f1fbd0daec750f3dccafa0f31fc2d4bd4fc1f2c,f/c/fc3f6628811248dd84268cec41e8e63e7b8daeb4
-z
-Jsrc/main/java/es/unex/cum/sinf/practica2/reducers/IncomeByYearReducer.java,b/b/bb1ab36b761eb9e8d11f5ef79e486747fca90fb4
 x
 Hsrc/main/java/es/unex/cum/sinf/practica2/mappers/IncomeByYearMapper.java,1/2/127326e958b4a842474648c92f20f859752d3ebc
-Ç
-Rsrc/main/java/es/unex/cum/sinf/practica2/reducers/IncomeByMonthAndYearReducer.java,a/5/a545454da7e20905a7bf1a2a3cb00ffd6162be32
 w
 Gsrc/main/java/es/unex/cum/sinf/practica2/mappers/SalesByCityMapper.java,a/9/a969b3f89827a11cd0185692ebb3aba2ced13f7c
 z
 Jsrc/main/java/es/unex/cum/sinf/practica2/mappers/SalesByProductMapper.java,f/d/fd051bfecd7fc2bda9825a686751bb1eb4fe4dd5
-y
-Isrc/main/java/es/unex/cum/sinf/practica2/reducers/SalesByCityReducer.java,4/6/466fc5472f9bbdd0c422dd15df33b122e78df62d
 u
 Esrc/main/java/es/unex/cum/sinf/practica2/reducers/GenericReducer.java,8/8/88cb4ed2815fa4449f11a6096c2f0c6016f34d2e
 d
 4src/main/java/es/unex/cum/sinf/practica2/Driver.java,9/4/94351147c2da5f36da71803bc9d969c1869ac171
 Ä
 Psrc/main/java/es/unex/cum/sinf/practica2/mappers/IncomeByMonthAndYearMapper.java,4/5/45e8e25eeaef0b9eda6c533edf9f9edeff4c10ff
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d

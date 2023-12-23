@@ -4,7 +4,6 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,9 +17,8 @@ public class SalesByCityMapper extends Mapper<Object, Text, Text, IntWritable> {
         String[] columns = value.toString().split(SEPARATOR);
         if (hasValidColumns(columns)) {
             int quantityOrdered = parseQuantityOrdered(columns[QUANTITY_ORDERED_INDEX]);
-            String purchaseAddress = String.join(",", Arrays.copyOfRange(columns, 5, columns.length));
-            String cityAndState = extractCityAndState(purchaseAddress);
-            if (quantityOrdered > 0 && !cityAndState.isEmpty()) {
+            String cityAndState = extractCityAndState(columns[PURCHASE_ADDRESS_INDEX]);
+            if (quantityOrdered > 0) {
                 context.write(new Text(cityAndState), new IntWritable(quantityOrdered));
             }
         }
@@ -46,7 +44,7 @@ public class SalesByCityMapper extends Mapper<Object, Text, Text, IntWritable> {
 
     private String extractCityAndState(String address) {
         // Example: 917 1st St, Dallas, TX 75001
-        String[] addressParts = address.split(",");
+        String[] addressParts = address.split(";");
         if (addressParts.length >= 3) {
             String city = addressParts[1].trim();
             String state = addressParts[2].trim().split(" ")[0];
@@ -54,24 +52,4 @@ public class SalesByCityMapper extends Mapper<Object, Text, Text, IntWritable> {
         }
         return "";
     }
-
-    private void test(String example){
-        String[] columns = example.split(SEPARATOR);
-        if (hasValidColumns(columns)) {
-            int quantityOrdered = parseQuantityOrdered(columns[QUANTITY_ORDERED_INDEX]);
-            String purchaseAddress = String.join(",", Arrays.copyOfRange(columns, 5, columns.length));
-            String cityAndState = extractCityAndState(purchaseAddress);
-            if (quantityOrdered > 0 && !cityAndState.isEmpty()) {
-                System.out.println("Quantity: " + quantityOrdered);
-                System.out.println("City and state: " + cityAndState);
-            }
-        }
-    }
-
-    public static void main(String[] args) {
-        String example = "176564,USB-C Charging Cable,1,11.95,04/12/19 10:58,\"790 Ridge St, Atlanta, GA 30301\"";
-        SalesByCityMapper mapper = new SalesByCityMapper();
-        mapper.test(example);
-    }
-
 }

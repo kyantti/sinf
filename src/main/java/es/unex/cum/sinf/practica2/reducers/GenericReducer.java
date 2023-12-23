@@ -19,17 +19,15 @@ public class GenericReducer<K extends Writable, V extends Writable> extends Redu
         for (V value : values) {
             if (value instanceof DoubleWritable) {
                 total += ((DoubleWritable) value).get();
-            } else if (value instanceof IntWritable) {
+            }
+            else if (value instanceof IntWritable) {
                 total += ((IntWritable) value).get();
             }
-            // Add more cases for other writable types if necessary
         }
 
         if (total % 1 == 0) {
-            // If the total is an integer, format without decimal places
             outputValue.set(String.format("%.0f", total));
         } else {
-            // If the total is a double, format with 2 decimal places
             outputValue.set(decimalFormat.format(total));
         }
 
