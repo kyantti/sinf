@@ -1,12 +1,9 @@
-package es.unex.cum.sinf.practica2;
+package es.unex.cum.sinf.practica2.mappers;
 
-import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -55,10 +52,5 @@ public class SalesByCityMapper extends Mapper<Object, Text, Text, IntWritable> {
         }
         return "";
     }
-
-    public static void main(String[] args) {
-        System.out.println("City and state: " + new SalesByCityMapper().extractCityAndState("917 1st St, Dallas, TX 75001"));
-    }
-
 
 }

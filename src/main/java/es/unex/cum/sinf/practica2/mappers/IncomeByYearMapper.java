@@ -1,4 +1,4 @@
-package es.unex.cum.sinf.practica2;
+package es.unex.cum.sinf.practica2.mappers;
 
 import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.Text;
@@ -9,13 +9,14 @@ import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class IncomeByMonthAndYearMapper extends Mapper <Object, Text, Text, DoubleWritable>{
+public class IncomeByYearMapper extends Mapper <Object, Text, Text, DoubleWritable>{
     private static final String SEPARATOR = ",";
     private static final int QUANTITY_ORDERED_INDEX = 2;
     private static final int PRICE_EACH_INDEX = 3;
     private static final int ORDER_DATE_INDEX = 4;
-    private final SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yy HH:mm");
-    private static final Logger logger = Logger.getLogger(IncomeByMonthAndYearMapper.class.getName());
+    private static final SimpleDateFormat inputDateFormat = new SimpleDateFormat("MM/dd/yy HH:mm");
+    private static final SimpleDateFormat outputDateFormat = new SimpleDateFormat("yy");
+    private static final Logger logger = Logger.getLogger(IncomeByYearMapper.class.getName());
 
     @Override
     public void map(Object key, Text value, Context context) throws InterruptedException, IOException {
@@ -23,9 +24,9 @@ public class IncomeByMonthAndYearMapper extends Mapper <Object, Text, Text, Doub
         if (hasValidColumns(columns)) {
             int quantityOrdered = parseQuantityOrdered(columns[QUANTITY_ORDERED_INDEX]);
             double priceEach = parsePriceEach(columns[PRICE_EACH_INDEX]);
-            String monthAndYear = parseMonthAndYear(columns[ORDER_DATE_INDEX]);
-            if (quantityOrdered > 0 && priceEach >= 0 && !monthAndYear.isEmpty()) {
-                context.write(new Text(monthAndYear), new DoubleWritable(quantityOrdered * priceEach));
+            String year = parseYear(columns[ORDER_DATE_INDEX]);
+            if (quantityOrdered > 0 && priceEach >= 0 && !year.isEmpty()) {
+                context.write(new Text(year), new DoubleWritable(quantityOrdered * priceEach));
             }
         }
     }
@@ -62,17 +63,15 @@ public class IncomeByMonthAndYearMapper extends Mapper <Object, Text, Text, Doub
         return price;
     }
 
-    private String parseMonthAndYear(String text) {
-        // If the date is valid (MM/dd/yy HH:mm) return the month and year (MM/yy) as a String
-        // If the date is not valid return empty String
-        String monthAndYear = "";
+    private String parseYear(String text) {
+        String year = "";
         try {
-            if (dateFormat.parse(text) != null) {
-                monthAndYear = text.substring(0, 5);
-            }
+            inputDateFormat.setLenient(false);
+            year = outputDateFormat.format(inputDateFormat.parse(text));
         } catch (ParseException e) {
             logger.log(Level.WARNING, "Invalid date format: " + text, e);
         }
-        return monthAndYear;
+        return year;
     }
+
 }
