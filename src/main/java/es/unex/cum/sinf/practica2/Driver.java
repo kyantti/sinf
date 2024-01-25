@@ -2,6 +2,7 @@ package es.unex.cum.sinf.practica2;
 
 import es.unex.cum.sinf.practica2.mappers.*;
 import es.unex.cum.sinf.practica2.reducers.GenericReducer;
+import es.unex.cum.sinf.practica2.reducers.MostSoldProductByCityReducer;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.util.Tool;
@@ -32,7 +33,7 @@ public class Driver extends Configured implements Tool {
         final String inputDir = args[0];
         final String outputDir = args[1];
 
-        // Exercise 1
+        /* Exercise 1
         runJob(inputDir, outputDir, "output_exercise1", IncomeByYearMapper.class, GenericReducer.class, DoubleWritable.class);
 
         // Exercise 2
@@ -45,7 +46,10 @@ public class Driver extends Configured implements Tool {
         runJob(inputDir, outputDir, "output_exercise4", SalesByProductMapper.class, GenericReducer.class, IntWritable.class);
 
         // Exercise 5
-        runJob(inputDir, outputDir, "output_exercise5", SalesByTimeMapper.class, GenericReducer.class, IntWritable.class);
+        runJob(inputDir, outputDir, "output_exercise5", SalesByTimeMapper.class, GenericReducer.class, IntWritable.class);*/
+
+        // Defensa
+        runJob(inputDir, outputDir, "defensa", SalesByProductAndCity.class, GenericReducer.class, IntWritable.class);
 
         return 0;
     }

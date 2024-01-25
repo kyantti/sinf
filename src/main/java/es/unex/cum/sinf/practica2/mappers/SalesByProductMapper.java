@@ -45,6 +45,4 @@ public class SalesByProductMapper extends Mapper<Object, Text, Text, IntWritable
         return quantityOrdered;
     }
 
-
-
 }
