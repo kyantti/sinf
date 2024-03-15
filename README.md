@@ -2,7 +2,18 @@
 
 # 1. Práctica 1
 
-Still to be documented.
+A travel agency needs an efficient management system to manage its wide range of destinations, tourist packages and customer reservations. It is requested to design and implement a travel agency management system using a NoSQL database with both the Cassandra model and the MongoDB model. The system must be able to perform basic, advanced and complex queries efficiently, which involves the generation of indexes or tables with different indexing.
+
+### Summary
+
+In this project, I developed a travel agency management system wusing both Cassandra and MongoDB as NoSQL databases. The system allows for efficient management of destinations, tourist packages, customers, and reservations. Various types of queries, including basic, advanced, and complex, were implemented, and appropriate indexing strategies were employed to optimize query performance.
+
+As an addition, I implemented a battery of tests to ensure consistent outputs between Cassandra and MongoDB databases.
+
+### Output example
+
+
+
 
 # 2. Práctica 2
 
